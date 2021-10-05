@@ -27,7 +27,7 @@ pre {
 }
 
 /* Phase 4 */
-a:link {
+a.a-selected {
     text-decoration: none;
 }
 
