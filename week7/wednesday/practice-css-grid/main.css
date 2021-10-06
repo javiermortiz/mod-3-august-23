@@ -13,7 +13,7 @@ html, body, div {
     /* Phase 1 */
     /*!!START */
     display: grid;
-    grid-template-columns: 1fr auto 3fr;
+    grid-template-columns: 1fr 100px 3fr;
     grid-template-areas:
     "header header header"
     "main . sidebar"
@@ -22,7 +22,7 @@ html, body, div {
 
     /* Bonus Phase */
     /*!!START */
-    grid-gap: 15px 0;
+    row-gap: 15px;
     /*!!END */
 }
 .item-1 {
@@ -64,7 +64,7 @@ html, body, div {
 
     /* Bonus Phase */
     /*!!START */
-    width: 100px;
+    /* width: 100px; */
     /* grid-area: test; */
     box-sizing: border-box;
     /*!!END */
@@ -84,7 +84,7 @@ html, body, div {
     grid-template-rows: repeat(3, 50px);
 
     grid-auto-flow: column;
-
+    gap: 10px 20px;
     align-items: center;
     justify-items: center;
     /*!!END */
