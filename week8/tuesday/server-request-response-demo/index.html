@@ -8,12 +8,18 @@
     <link rel="stylesheet" href="./assets/main.css">
 </head>
 <body>
-    <div class="title">
-        <h1>Server Request/Response Demo</h1>
-        <ul class="tasks-list">
-            #{tasks}
-        </ul>
-    </div>
+    <form method="POST" action="/quotes">
+        <h2>How are you feeling today?</h2>
+        <div>
+            <input type="radio" id="good" name="status" value="good">
+            <label for="good">Good</label>
+        </div>
+        <div>
+            <input type="radio" id="bad" name="status" value="bad">
+            <label for="bad">Bad</label>
+        </div>
+        <button>Submit</button>
+    </form>
     <div class="form-container">
         <form action="/tasks" method="post" class="form">
             <div class="form-tasks">

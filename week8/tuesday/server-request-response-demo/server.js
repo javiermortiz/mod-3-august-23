@@ -3,14 +3,20 @@ const fs = require('fs');
 
 let database = [];
 
+const quotes = {
+    good: ["hello", "another quote", "another one"],
+    bad: ["hello again", "yet another one", "final example"]
+}
+
 const server = http.createServer((req, res) => {
     console.log(`${req.method} ${req.url}`);
 
     if (req.method === "GET" && req.url === "/") {
         const htmlPage = fs.readFileSync("index.html", "utf-8");
-        const tasksList = database.map(task => {
-            return `<li>${task["tasks"]} - ${task["time"]}</li>`
+        const tasksList = database.map(quote => {
+            return `<li>${quote}</li>`
         });
+        console.log(tasksList);
         const resBody = htmlPage.replace(/#{tasks}/g, tasksList.join(""));
         res.statusCode = 200;
         res.setHeader("Content-Type", "text/html");
@@ -59,11 +65,13 @@ const server = http.createServer((req, res) => {
                 }, {});
         }
 
-        if (req.method === "POST" && req.url === "/tasks") {
+        if (req.method === "POST" && req.url === "/quotes") {
             console.log(req.body);
-            const newTask = req.body;
-            console.log(newTask);
-            database.push(newTask);
+            const newStatus = req.body;
+            console.log(newStatus);
+            const randomNum = Math.floor(Math.random() * quotes[newStatus.status].length);
+            const quote = quotes[newStatus.status][randomNum];
+            database.push(quote);
             res.statusCode = 302;
             res.setHeader("Location", "/");
             return res.end();

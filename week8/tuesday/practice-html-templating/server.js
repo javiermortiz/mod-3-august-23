@@ -61,6 +61,7 @@ const server = http.createServer((req, res) => {
   // When the request is finished processing the entire body
   req.on("end", () => {
     // Parsing the body of the request
+
     if (reqBody) {
       req.body = reqBody
         .split("&")
