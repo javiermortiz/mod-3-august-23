@@ -90,8 +90,8 @@ const server = http.createServer((req, res) => {
       //!!START
       const newDog = {
         dogId: getNewDogId(),
-        name,
-        age
+        name: name,
+        age: age
       };
       dogs.push(newDog);
 
