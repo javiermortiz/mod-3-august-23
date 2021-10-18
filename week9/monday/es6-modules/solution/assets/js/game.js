@@ -1,5 +1,11 @@
 //!!START SILENT
-import { getIndex } from './utilities.js';
+
+// {getIndex: () => {
+    // const wrapper = document.getElementById('wrapper');
+    // return parseInt(wrapper.dataset.index);
+// };}
+
+import getIndex from './utilities.js';
 import { mrPotatoHeadQuotes } from './quotes/mrPotatoHead.js';
 import mrsPotatoHeadQuotes from './quotes/mrsPotatoHead.js';
 
